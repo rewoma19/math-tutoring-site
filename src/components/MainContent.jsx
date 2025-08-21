@@ -1,75 +1,37 @@
+import { teaching } from "../data/teaching";
 import HeroSection from "./HeroSection";
+import TeachingCard from "./TeachingCard";
 
 function MainContent() {
   return (
     <main className="flex flex-col">
       <HeroSection />
-      <section id="maths">
-        <div>
-          <p>from catch up to acceleration</p>
-          <div>
-            <h3>What I Teach</h3>
-            <p>I have the experience to teach you what you need to know</p>
+      <section
+        id="maths"
+        className="bg-slate-950 text-white  px-8 py-16 sm:py-20 md:py-24"
+      >
+        <div className="w-full mx-auto max-w-[1000px] flex flex-col gap-8">
+          <p className="tag rank rounded-full px-4 py-2 text-center mx-auto">
+            from catch up to acceleration
+          </p>
+          <div className="flex flex-col gap-2">
+            <h3 className="text-6xl sm:text-7xl md:text-8xl mx-auto text-center text-white">
+              What I Teach
+            </h3>
+            <p className="text-center mx-auto">
+              I have the experience to teach you what you need to know
+            </p>
           </div>
-          <div>
-            <div>
-              <h4>NCEA</h4>
-              <p>&rarr; Personalized support for Levels 1, 2, and 3</p>
-              <p>&rarr; Focus on internal assessments, exams, and credits</p>
-              <p>
-                &rarr; Assistance with problem-solving techniques and past exam
-                papers
-              </p>
-              <p>&rarr; Guidance on achieving Merit and Excellence standards</p>
-            </div>
-            <div>
-              <h4>International Baccalaureate</h4>
-              <p>&rarr; Help with SL and HL maths curriculum</p>
-              <p>
-                &rarr; Tailored guidance for Internal Assessments (IA) and exam
-                preparation
-              </p>
-              <p>
-                &rarr; In-depth support for core concepts and optional topics
-              </p>
-              <p>
-                &rarr; Effective strategies for high achievement in assessments
-              </p>
-            </div>
-            <div>
-              <h4>Cambridge</h4>
-              <p>&rarr; Tutoring for IGCSE, AS, and A-Level maths</p>
-              <p>&rarr; Expert help with structured revision for exams</p>
-              <p>
-                &rarr; Targeted support for past papers, exam techniques, and
-                challenging topics
-              </p>
-              <p>
-                &rarr; Focus on problem-solving, reasoning, and conceptual
-                understanding
-              </p>
-            </div>
-            <div>
-              <h4>General</h4>
-              <p>&rarr; Foundational maths support for all age groups</p>
-              <p>
-                &rarr; Build confidence in basic arithmetic, algebra, and
-                geometry
-              </p>
-              <p>
-                &rarr; Personalized learning pace and flexible tutoring plans
-              </p>
-              <p>
-                &rarr; Focus on improving problem-solving and critical thinking
-                skills
-              </p>
-              <p>
-                &rarr; Preparation for general school exams and continuous
-                assessment
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 my-10">
+            {teaching.map((card) => {
+              return (
+                <TeachingCard focus={card.focus} benefits={card.benefits} />
+              );
+            })}
           </div>
-          <button>Book a session</button>
+          <button className="w-fit mx-auto rounded-full px-8 py-4 card-button-secondary text-xl sm:text-2xl md:text-3xl whitespace-nowrap">
+            Book a session
+          </button>
         </div>
       </section>
       <section id="reviews">
