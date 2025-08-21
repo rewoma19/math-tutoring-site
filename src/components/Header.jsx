@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header className="p-8">
-      <div className="flex items-center justify-between gap-8 max-w-[1000px] mx-auto">
+      <div className="flex items-center justify-between gap-8 max-w-[1000px] mx-auto w-full">
         <h1 className="text-2xl sm:text-3xl md:text-4xl">
           Auckland Maths Tutoring
         </h1>
